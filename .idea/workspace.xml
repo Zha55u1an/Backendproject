@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ac0cf28f-c258-41f2-b89c-7aeefbb8658b" name="Changes" comment="" />
+    <list default="true" id="6252bbe6-3c04-485b-8ddb-e658291cd1a0" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -13,18 +13,15 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Python Script" />
         <option value="HTML File" />
+        <option value="Python Script" />
       </list>
     </option>
-  </component>
-  <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProjectId" id="2PYJbZ1psjPhdpO2mBDiPcwzUMD" />
+  <component name="ProjectId" id="2Naol5iA6US5sRRAiWcge9nGFmZ" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -34,29 +31,34 @@
     "DefaultHtmlFileTemplate": "HTML File",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "C:/Users/Nuris/bookr",
+    "last_opened_file_path": "C:/Users/Nuris/final",
     "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\Nuris\Documents\GitHub\Backendproject\final\reviews\templates\reviews" />
+      <recent name="C:\Users\Nuris\bookr\reviews\templates" />
+      <recent name="C:\Users\Nuris\bookr\templates" />
+      <recent name="C:\Users\Nuris\bookr" />
+      <recent name="C:\Users\Nuris\bookr\reviews\templates\reviews" />
+      <recent name="C:\Users\Nuris\bookr\reviews" />
     </key>
   </component>
-  <component name="RunManager">
-    <configuration name="manage" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
-      <module name="Backendproject" />
+  <component name="RunManager" selected="Python.Django Dev Server">
+    <configuration name="Django Dev Server" type="PythonConfigurationType" factoryName="Python">
+      <module name="bookr" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/final" />
-      <option name="IS_MODULE_SDK" value="true" />
+      <option name="SDK_HOME" value="C:\Users\Nuris\AppData\Local\Programs\Python\Python39\python.exe" />
+      <option name="SDK_NAME" value="Python 3.9" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/final/manage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/manage.py" />
       <option name="PARAMETERS" value="runserver" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -65,15 +67,41 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="admin" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="bookr" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/admin.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.admin" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="ac0cf28f-c258-41f2-b89c-7aeefbb8658b" name="Changes" comment="" />
-      <created>1683628153419</created>
+      <changelist id="6252bbe6-3c04-485b-8ddb-e658291cd1a0" name="Changes" comment="" />
+      <created>1679911701203</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1683628153419</updated>
+      <updated>1679911701203</updated>
     </task>
     <servers />
   </component>
