@@ -27,16 +27,18 @@
                 <a class="nav-link" href="/posts/">Home <span class="sr-only">(current)</span></a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Logout</a>
+                <a class="nav-link" href="/logout">Logout</a>
               </li>
             </ul>
-            <form action="{% url 'post_search' %}" class="form-inline my-2 my-lg-0">
-             <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" name="search" value="{{ search_text }}" minlength="3">
-              <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-            </form>
-          </div>
-            {% if user.username %}
-            <div class="text-primary">user : {{user.username}}</div>
+            </div>
+            {% if request.user is not None %}
+                <div>
+                    <ul class="navbar-nav">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="/profile/{{request.user.username}}">{{request.user.username}}</a>
+                        </li>
+                    </ul>
+                </div>
             {% endif %}
         </nav>
         <div class="container-fluid">

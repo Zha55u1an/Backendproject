@@ -4,7 +4,7 @@ from django.conf import settings
 from django.test import TestCase, Client
 from django.utils import timezone
 
-from reviews.models import Post, Publisher
+from reviews.models import Post
 
 
 class Activity2Test(TestCase):

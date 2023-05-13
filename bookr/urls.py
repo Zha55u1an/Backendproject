@@ -22,13 +22,13 @@ import bookr.views
 import reviews.views
 
 urlpatterns = [
-    path('accounts/', include(('django.contrib.auth.urls', 'auth'), namespace='accounts')),
-    path('accounts/profile/', bookr.views.profile, name='profile'),
+    path('', include(('django.contrib.auth.urls', 'auth'), namespace='accounts')),
+    path('profile/', bookr.views.gotologin, name='profile'),
+    path('profile/<str:username>', bookr.views.profile, name='profile'),
     path('admin/', admin.site.urls),
     path('', reviews.views.index),
-    path('post-search/', reviews.views.post_search, name='post_search'),
     path('', include('reviews.urls')),
 ]
-
 if settings.DEBUG:
+    urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

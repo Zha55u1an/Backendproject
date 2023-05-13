@@ -1,13 +1,11 @@
 from django import forms
 
-from .models import Publisher, Comment, Post
+from .models import Comment, Post , CustomUser
 
-
-class PublisherForm(forms.ModelForm):
+class UserProfileForm(forms.ModelForm):
     class Meta:
-        model = Publisher
-        fields = "__all__"
-
+        model = CustomUser
+        fields= "__all__"
 
 class CommentForm(forms.ModelForm):
     class Meta:

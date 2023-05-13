@@ -1,17 +1,17 @@
 from django.contrib import auth
 from django.db import models
+from django.contrib.auth.models import User
+from django.contrib.auth.models import AbstractUser
+from django.db import models
 
+class CustomUser(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    profile_image = models.ImageField(upload_to='profile_images/', blank=True, null=True)
 
-class Publisher(models.Model):
-    """A company that publishes posts."""
-    name = models.CharField(max_length=50,
-                            help_text="The name of the Publisher.")
-    website = models.URLField(help_text="The Publisher's website.")
-    email = models.EmailField(help_text="The Publisher's email address.")
+    # Add any additional fields or methods as needed
 
     def __str__(self):
-        return self.name
-
+        return self.user.username
 
 class Tag(models.Model):
     name = models.CharField(max_length=100)
@@ -24,14 +24,13 @@ class Post(models.Model):
     """A published post."""
     title = models.CharField(max_length=70,
                              help_text="The title of the post.")
+    text=models.TextField()
     publication_date = models.DateField(
         verbose_name="Date the post was published.")
     isbn = models.CharField(max_length=20,
                             verbose_name="ISBN number of the post.")
-    publisher = models.ForeignKey(Publisher,
-                                  on_delete=models.CASCADE)
-    contributors = models.ManyToManyField('Contributor',
-                                          through="postContributor")
+    numOfLikes=models.IntegerField()
+    creator = models.ForeignKey(CustomUser,on_delete=models.CASCADE)
     cover = models.ImageField(null=True,
                               blank=True,
                               upload_to="post_covers/")
@@ -47,37 +46,6 @@ class Post(models.Model):
         return "{}-{}-{}-{}-{}".format(self.isbn[0:3], self.isbn[3:4],
                                        self.isbn[4:6], self.isbn[6:12],
                                        self.isbn[12:13])
-
-
-class Contributor(models.Model):
-    """A contributor to a post, e.g. author, editor, co-author."""
-    first_names = models.CharField(max_length=50,
-                                   help_text="The contributor's first name or names.")
-    last_names = models.CharField(max_length=50,
-                                  help_text="The contributor's last name or names.")
-    email = models.EmailField(help_text="The contact email for the contributor.")
-
-    def initialled_name(self):
-        """ self.first_names='Jerome David', self.last_names='Salinger'
-            => 'Salinger, JD' """
-        initials = ''.join([name[0] for name
-                            in self.first_names.split(' ')])
-        return "{}, {}".format(self.last_names, initials)
-
-    def __str__(self):
-        return self.initialled_name()
-
-class postContributor(models.Model):
-    class ContributionRole(models.TextChoices):
-        AUTHOR = "AUTHOR", "Author"
-        EDITOR = "EDITOR", "Editor"
-
-    post = models.ForeignKey(Post, on_delete=models.CASCADE)
-    contributor = models.ForeignKey(Contributor, on_delete=models.CASCADE)
-    role = models.CharField(verbose_name="The role this contributor had in the post.",
-                            choices=ContributionRole.choices, max_length=20)
-    def __str__(self):
-        return "{} {} {}".format(self.contributor.initialled_name(), self.role, self.post.isbn)
 
 class Comment(models.Model):
     content = models.TextField(help_text="")
