@@ -15,27 +15,47 @@
     <link rel="stylesheet" href="{% static 'main.css' %}">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Libre+Baskerville|Source+Sans+Pro&display=swap">
   </head>
+  {% block styles %}
+  {% endblock %}
   <body>
-        <nav class="navbar navbar-expand-sm navbar-dark bg-dark sticky-top">
-          <a class="navbar-brand" href="/">{% block brand %}<img src="{% static 'logo.png' %}">{% endblock %}</a>
+        <nav id="total_nav" class="navbar navbar-expand-sm navbar-dark bg-info sticky-top">
+          <a class="navbar-brand" href="/">{% block brand %}<img src="{% static 'logoliked.png' %}">{% endblock %}</a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
-              <li class="nav-item active">
+                <li class="nav-item active">
                 <a class="nav-link" href="/posts/">Home <span class="sr-only">(current)</span></a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link" href="/logout">Logout</a>
+                <li class="nav-item active">
+                <a class="nav-link" href="/posts/">Settings <span class="sr-only">(current)</span></a>
               </li>
             </ul>
             </div>
-            {% if request.user is not None %}
+            {% if request.user.username %}
                 <div>
                     <ul class="navbar-nav">
                         <li class="nav-item active">
                             <a class="nav-link" href="/profile/{{request.user.username}}">{{request.user.username}}</a>
+                        </li>
+                    </ul>
+                    <ul class="navbar-nav">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="/logout">Logout</a>
+                        </li>
+                    </ul>
+                </div>
+            {% else %}
+                <div>
+                    <ul class="navbar-nav">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="/login">Login</a>
+                        </li>
+                    </ul>
+                    <ul class="navbar-nav">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="/register">Register</a>
                         </li>
                     </ul>
                 </div>
@@ -48,7 +68,7 @@
           </div>
         {% endfor %}
         {% block content %}
-            <h1>Welcome to postr!</h1>
+            <h1>Welcome to liked!</h1>
         {% endblock %}
         </div>
   <!-- Copyright -->
